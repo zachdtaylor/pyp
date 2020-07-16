@@ -1,1 +1,6 @@
 env
+*.pyc
+*.egg-info
+dist
+build
+.vscode
