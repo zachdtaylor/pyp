@@ -14,10 +14,10 @@ setup(
   author = 'Zach Taylor',
   author_email = 'zachdtaylor.b@gmail.com',
   url = 'https://github.com/zachtylr21/pyp',
-  download_url = 'https://github.com/zachtylr21/pyp/archive/v0.0.2.tar.gz',    # I explain this later on
+  download_url = 'https://github.com/zachtylr21/pyp/archive/v0.0.2.tar.gz',
   keywords = ['pip', 'python', 'package', 'requirements', 'dependency'],
   classifiers=[
-    'Development Status :: 5 - Production/Stable',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
+    'Development Status :: 5 - Production/Stable',
     'Intended Audience :: Developers',
     'Topic :: Software Development :: Build Tools',
     'License :: OSI Approved :: MIT License',
