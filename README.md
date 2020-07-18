@@ -8,4 +8,6 @@ $ pyp install pip-install-test
 ```
 
 ## Installation
-Clone this repository and add it to your path
+```console
+$ pip install pyp-manager
+```
