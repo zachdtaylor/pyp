@@ -1,9 +1,9 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 setup(
   name = 'pyp',
-  packages = ['pyp'],
+  packages = find_packages(), 
   entry_points = {
     "console_scripts": ['pyp=pyp.pyp:main']
   },
