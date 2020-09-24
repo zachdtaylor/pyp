@@ -11,3 +11,5 @@ $ pyp install pip-install-test
 ```console
 $ pip install pyp-manager
 ```
+
+`pyp` currently works in python 3 **only**.
