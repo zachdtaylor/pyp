@@ -14,7 +14,7 @@ setup(
     author='Zach Taylor',
     author_email='zachdtaylor.b@gmail.com',
     url='https://github.com/zachtylr21/pyp',
-    download_url='https://github.com/zachtylr21/pyp/archive/v0.0.2.tar.gz',
+    download_url='https://github.com/zachtylr21/pyp/archive/v0.0.3.tar.gz',
     keywords=['pip', 'python', 'package', 'requirements', 'dependency'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
