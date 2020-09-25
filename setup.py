@@ -8,7 +8,7 @@ setup(
         "console_scripts": ['pyp=pyp.pyp:main']
     },
     scripts=['./pyp-runner.py'],
-    version='0.0.2',
+    version='0.0.3',
     license='MIT',
     description='A pip wrapper that writes requirements.txt automatically',
     author='Zach Taylor',
