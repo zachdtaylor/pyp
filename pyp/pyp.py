@@ -1,5 +1,6 @@
 import sys
 import subprocess
+import re
 
 
 def pip_install(package_names):
@@ -11,9 +12,10 @@ def pip_install(package_names):
 
 
 def pip_freeze(package_names):
-    patterns = "'" + '==\|'.join(package_names) + "'"
+    patterns = "'" + '==\|'.join(package_names) + "=='"
+    patterns = re.sub(r'[-_]', '[-_]', patterns)
     output = subprocess.check_output(
-        'pip freeze | grep ' + patterns + '==',
+        'pip freeze | grep -i ' + patterns,
         shell=True
     ).decode('ascii')
     return output
