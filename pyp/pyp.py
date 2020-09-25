@@ -44,7 +44,13 @@ def main():
     else:
         print(
             """
+<<<<<<< HEAD
             pyp currently only supports install.
             If you want to contribute, visit https://github.com/zachtylr21/pyp
             """
+=======
+      pyp currently only supports install.
+      If you want to contribute, visit https://github.com/zachtylr21/pyp
+      """
+>>>>>>> 3a5b85f0ff839bb299e2a4c9bfbad6b896917bd5
         )
