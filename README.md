@@ -12,4 +12,8 @@ $ pyp install pip-install-test
 $ pip install pyp-manager
 ```
 
-`pyp` currently works in python 3 **only**.
+`pyp` currently works in python 3 **only** and it relies on the `pip` command being available.
+
+## Supported `pip` Commands
+The following commands from `pip` are supported in `pyp`.
+- `install`
