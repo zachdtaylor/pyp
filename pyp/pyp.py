@@ -1,7 +1,9 @@
 import sys
 import subprocess
 import re
+from collections import OrderedDict
 
+REQUIREMENTS_FILE_NAME = 'requirements.txt'
 
 def pip_install(package_names):
     p = subprocess.Popen(
@@ -10,6 +12,9 @@ def pip_install(package_names):
     )
     p.wait()
 
+def sort_entries(entries):
+    lowercase_list = [entry.lower() for entry in entries]
+    return sorted(lowercase_list)
 
 def pip_freeze(package_names):
     patterns = "'" + '==\|'.join(package_names) + "=='"
@@ -20,22 +25,25 @@ def pip_freeze(package_names):
     ).decode('ascii')
     return output
 
+def get_existing_entries():
+    entries = []
+    try:
+        with open(REQUIREMENTS_FILE_NAME, 'r') as file:
+            entries = [entry.rstrip('\n') for entry in file]
+    except FileNotFoundError:
+        open(REQUIREMENTS_FILE_NAME, 'w').close()
+    
+    return entries
 
 def write_requirements(packages):
-    for pkg in packages.split('\n')[:-1]:  # Skip the '' at the end
-        while True:
-            try:
-                with open('requirements.txt', 'r+') as f:
-                    for line in f:
-                        if pkg in line:
-                            break
-                    else:
-                        f.write(pkg + '\n')
-            except FileNotFoundError:
-                open('requirements.txt', 'w').close()
-            else:
-                break
+    existing_entries = get_existing_entries()
+    new_entries = packages.split('\n')[:-1] # Skip the '' at the end
+    combined_entries = list(OrderedDict.fromkeys (existing_entries + new_entries))
+    sorted_entries = sort_entries(combined_entries)
 
+    file_contents = '\n'.join(sorted_entries) + '\n' # For the last entry
+    with open(REQUIREMENTS_FILE_NAME, 'w') as file:
+        file.write(file_contents)
 
 def main():
     if sys.argv[1] == 'install':
